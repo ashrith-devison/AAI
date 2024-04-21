@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift Attendence</title>
+    <link rel="stylesheet" href="/project-ba/styles/table.css">
+    <script src="/project-ba/attendence/shift-allocation.js"></script>
+</head>
+<body>
+    <form>
+        <select id="department-selection" onchange="fetch_data()">
+            <option >Select Department</option>
+            <option value="1">CNS</option>
+            <option value="2">ATC</option>
+            <option value="3">ATM</option>
+            <option value="4">BHARAT</option>
+            <option value="5">FIRE</option>
+        </select>
+    </form>
+    <div id="table-fetched-data"></div>
+</body>

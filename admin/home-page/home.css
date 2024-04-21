@@ -1,0 +1,57 @@
+body {
+    overflow: hidden;
+}
+
+.header-center > div {
+    margin: 3%;
+}
+
+.header-center {
+    display: flex;
+}
+
+.header {
+    padding: 20px;
+    display: flex;
+}
+
+.table {
+    width: 70vw;
+    border-radius: 120px;
+}
+
+th {
+    background-color: #0077b6;
+    color: white;
+}
+
+tr:nth-child(odd) td {
+    background-color: white;
+}
+
+tr:nth-child(even) td {
+    background-color: #caf0f8;
+}
+
+caption {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: blue;
+}
+
+.table-container {
+    height: 82%;
+    overflow-y: scroll;
+    margin: 25px;
+    position: relative;
+    left: 15%;
+}
+
+label {
+    margin-right: 10px;
+}
+
+#atc-table, #cns-table, #fire-table, #e-table, #driver-table {
+    display: none;
+}
