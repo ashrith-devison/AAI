@@ -42,6 +42,18 @@
                 $shift_data = isset($value_data[$staff['Employee_ID']]) ? $value_data[$staff['Employee_ID']] : "Nan";
                 $shift_data = $data[$shift_data];
                 echo "<td>
+                <style>
+                    #shift-selection {
+                        font-size: 14px;
+                        padding: 6px;
+                        border-radius: 5px;
+                        border: 5px solid #ccc;
+                    }
+                    #shift-selection option {
+                        font-size: 16px;
+                        padding: 4px;
+                    }
+                </style>
                 <select id='shift-selection' data-id = '".$staff['Employee_ID']."' onchange = 'update(this)'>";
                 echo "<option selected disabled>".$shift_data."</option>
                     <option value='Nan'>Not Assigned</option>
@@ -55,7 +67,26 @@
             } 
         echo "</tbody>";
     echo "</table>";
-    echo "<button type='button' onclick="."relocate('/project-ba/shifts-view/shifts-view.html'); ".">Proceed</button>
+    echo "<button type='button' style='position:relative; left:90%' class='btn btn-success' onclick="."relocate($department); ".">Proceed</button>
     <div id='message'>
     </div>";
-}
+    }
+    else{
+        echo 
+        "<script src='/AAI/node_modules/sweetalert2/dist/sweetalert2.all.min.js'></script>
+        <script>
+            window.onload = function() {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Invalid Request',
+                    icon: 'error',
+                    confirmButtonText: 'OK',
+                }).then((result) => {
+                    if(result.isConfirmed){
+                        window.location.href = '/AAI/index.html';
+                    }
+                });
+            }
+        </script>";
+    }
+?>

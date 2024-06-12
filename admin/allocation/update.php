@@ -12,11 +12,11 @@
             exit();
         }
 
-        $query_dup = "SELECT * FROM employee_shiftassignment WHERE Employee_ID = '$empid' AND ShiftID != '$status' ";
+        $query_dup = "SELECT * FROM employee_shiftassignment WHERE Employee_ID = '$empid' ";
         $result = $conn->query($query_dup);
 
         if ($result) {
-            if ($result->num_rows === 1) {
+            if ($result->num_rows >= 1) {
                 $result = $result->fetch_assoc();
                 $query = "UPDATE employee_shiftassignment SET ShiftID = '$status' WHERE Employee_ID = '$empid' AND ShiftID = '{$result['ShiftID']}'";
             } else {
