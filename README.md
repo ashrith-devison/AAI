@@ -4,4 +4,5 @@
   <li>Ashrith Sai</li>
   <li>Likith</li>
   <li>Raghu Ram</li>
+  <li>Srujana Gayathri</li>
 </ul>
